@@ -41,11 +41,15 @@ void Player::keyPressEvent(QKeyEvent * event)
 
 void Player::moveLeft()
 {
+    if (x() < 0) return;
+
     setPos(x()-10, y());
 }
 
 void Player::moveRight()
 {
+    if (x() > game->getContext()->scene()->width() - rect().width()) return;
+
     setPos(x()+10, y());
 }
 
