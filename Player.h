@@ -15,6 +15,9 @@ public:
     Player();
     void join(Game * game);
     void keyPressEvent(QKeyEvent * event);
+    void fire();
+    void moveLeft();
+    void moveRight();
 };
 
 #endif // PLAYER_H

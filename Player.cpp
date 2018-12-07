@@ -25,18 +25,33 @@ void Player::keyPressEvent(QKeyEvent * event)
     switch(event->key())
     {
         case Qt::Key_Left: {
-            setPos(x()-10, y());
+            moveLeft();
             break;
         }
         case Qt::Key_Right: {
-            setPos(x()+10, y());
+            moveRight();
             break;
         }
         case Qt::Key_Space: {
-            Bullet * bullet = new Bullet();
-            bullet->setPos(x(), y());
-            game->getContext()->scene()->addItem(bullet);
+            fire();
             break;
         }
     }
+}
+
+void Player::moveLeft()
+{
+    setPos(x()-10, y());
+}
+
+void Player::moveRight()
+{
+    setPos(x()+10, y());
+}
+
+void Player::fire()
+{
+    Bullet * bullet = new Bullet();
+    bullet->setPos(x(), y());
+    game->getContext()->scene()->addItem(bullet);
 }
