@@ -1,15 +1,12 @@
 #include <QApplication>
-#include "Game.h"
-#include "Player.h"
+#include "src/Game.h"
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    Game * game = new Game;
-    Player * player = new Player;
+    Src::Game * game = new Src::Game;
 
-    player->join(game);
     game->start();
 
     return a.exec();

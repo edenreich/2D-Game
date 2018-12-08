@@ -25,17 +25,20 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
-        main.cpp \
-    Player.cpp \
-    Game.cpp \
-    Bullet.cpp \
-    Enemy.cpp
+    main.cpp \
+    src/Game.cpp \
+    src/Entities/Player.cpp \
+    src/Entities/Bullet.cpp \
+    src/Entities/Enemy.cpp
+
+PRECOMPILED_HEADER = vendor.h
 
 HEADERS += \
-    Game.h \
-    Player.h \
-    Bullet.h \
-    Enemy.h
+    src/Game.h \
+    src/Entities/Player.h \
+    src/Entities/Bullet.h \
+    src/Entities/Enemy.h \
+    vendor.h
 
 FORMS +=
 
